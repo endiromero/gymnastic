@@ -67,13 +67,11 @@ if (!isset($_SESSION['user'])) {
                 });
 
                 pic.on('snapshot', function(snapshot) {
-                    alert('capturando');
                     var img = $('<img id="pic">');
                     quality = snapshot.toDataURL('image/jpeg');
                     img.attr('src', quality);
                     img.appendTo('#preview-pic');
-                    var input_hide = document.getElementById('value-pic');//Probar estas líneas
-                    input_hide.val(quality);
+                    $('input[name=value-pic]').val(quality);
                 });
 
                 $('#discard').click(function() {
@@ -186,7 +184,7 @@ if (!isset($_SESSION['user'])) {
                 <div class="col-md-12">
                     <!-- Formulario de Altas -->
                     <form role="form">
-                        <input name="pic" id="value-pic" type="hidden" value="">                       <!-- Nav tabs -->
+                        <input name="value-pic" id="value-pic" type="hidden" value=""><!-- Nav tabs -->
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#datos_personales" data-toggle="tab">Datos Personales</a></li>
                             <li><a href="#datos_fisicos_origen" data-toggle="tab">Datos Fisicos Origen</a></li>
