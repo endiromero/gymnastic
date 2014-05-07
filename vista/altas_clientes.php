@@ -227,15 +227,16 @@ if (!isset($_SESSION['user'])) {
                                                     <input type="email" class="form-control" id="correo" name="txtcorreo" placeholder="Ingrese correo eléctronico">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label for="localidad">Localidad</label>
-                                                    <input type="text" class="form-control" id="localidad" name="txtlocalidadnac" placeholder="Ingrese localidad de nacimiento ">
+                                                    <label for="direccion">Dirección</label>
+                                                    <input type="text" class="form-control" id="direccion" name="txtlocalidadnac" placeholder="Ingrese dirección completa ">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-6">
-
+                                                    <label for="dni">D.N.I.</label>
+                                                    <input type="email" class="form-control" id="dni" name="txtcorreo" placeholder="Ingrese DNI">
                                                 </div>
                                                 <div class="col-md-6">
 
@@ -355,8 +356,8 @@ if (!isset($_SESSION['user'])) {
 
                                     </div>
                                     <div class="col-md-6">
-                                        <h4><span class="label label-default">ID Cliente: GYM-811026</span></h4>
-                                        <h4><span class="label label-default">Código de GYMNASIO: ESMADLEG-01</span></h4>
+                                        <!--<h4><span class="label label-default">ID Cliente: GYM-811026</span></h4>
+                                        <h4><span class="label label-default">Código de GYMNASIO: ESMADLEG-01</span></h4>-->
                                     </div>
                                 </div>
                             </div>
@@ -365,7 +366,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <hr>
                 <footer>
-                    <p>Gymnastic</p>
+                    <p>Gymnastic Copyrigth</p>
                 </footer>
             </div> 
         </div><!-- /container --><!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>-->

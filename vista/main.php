@@ -38,56 +38,7 @@ if (!isset($_SESSION['user'])) {
             }
         </style>
         <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-        <script>
-            $(document).ready(function() {
-                $.ionSound({
-                    sounds: [
-                        "camera_flashing_2"
-                    ],
-                    path: "../ion/sounds/",
-                    multiPlay: true,
-                    volume: "1.0"
-                });
-
-                var pic = new SayCheese('#boxpicture', {
-                    snapshots: true
-                });
-                pic.start();
-
-                var width = 320, height = 240;
-
-                $('#take-pic').click(function(e) {
-                    $.ionSound.play("camera_flashing_2");
-                    pic.takeSnapshot(width, height);
-                    return false;
-                });
-
-                pic.on('snapshot', function(snapshot) {
-                    var img = $('<img id="pic">');
-                    quality = snapshot.toDataURL('image/jpeg');
-                    img.attr('src', quality);
-                    img.appendTo('#preview-pic');
-                });
-
-                $('#discard').click(function() {
-                    $('#preview-pic').empty();
-                });
-
-                $("#fecha_nacimiento").datepicker(
-                        {
-                            dateFormat: "dd/mm/yy",
-                            dayNames: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabádo"],
-                            dayNamesMin: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
-                            monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-                            changeMonth: true,
-                            changeYear: true,
-                            yearRange: '-100:+0',
-                            monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
-                            showAnim: 'slideDown'
-                        }
-                );
-            });
-        </script>
+        
         <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>

@@ -26,7 +26,7 @@
             
             <?php
             $user = 'pruebas';
-            $pass = '1234';
+            $pass = '1234567';
                 if(isset($_GET['txtuser'])){
                     if($_GET['txtuser'] == $user && $_GET['txtpass'] == $pass){
                         session_start();
