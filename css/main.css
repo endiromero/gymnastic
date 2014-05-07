@@ -58,3 +58,68 @@ body {
     padding: 5px;
     text-align: center;
 }
+
+//--------------------------------------------------------------
+.style{
+    background-color: #E7E7E7;
+}
+
+.container-content{
+    background-color: #ffffff;
+}
+
+.container-aplication{
+    background-color: #999999;
+    //min-height: 600px;
+}
+
+#text_zona_clientes{
+    color: #ffffff;
+}
+
+.text_box_home{
+    text-align: justify;
+}
+
+.img_box_home{
+    display: block;
+    text-align: center;
+}
+
+.img_center{
+     padding: 1em 3em; margin: 1em 25%;
+}
+
+.labels-forms{
+    text-align: center;
+}
+
+option{
+    color: #000;
+}
+
+#txtnacionalidad{
+    visibility: hidden;
+}
+
+#lblnacionalidad{
+    visibility: hidden;
+}
+
+.boxpictures{
+    min-height: 190px;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+video{
+    max-width: 262px;
+    max-height: 190px;
+}
+
+#pic{
+    max-width: 262px;
+    max-height: 190px;    
+}
+
+

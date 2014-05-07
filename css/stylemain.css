@@ -1,0 +1,13 @@
+/* 
+    Created on : 07-may-2014, 12:48:30
+    Author     : Mitosu
+*/
+
+body{
+    background: url(../img/gym/login/gimnasio.jpg) no-repeat fixed center center #333;
+    background-size: cover;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+}
+
