@@ -67,10 +67,13 @@ if (!isset($_SESSION['user'])) {
                 });
 
                 pic.on('snapshot', function(snapshot) {
+                    alert('capturando');
                     var img = $('<img id="pic">');
                     quality = snapshot.toDataURL('image/jpeg');
                     img.attr('src', quality);
                     img.appendTo('#preview-pic');
+                    var input_hide = document.getElementById('value-pic');//Probar estas líneas
+                    input_hide.val(quality);
                 });
 
                 $('#discard').click(function() {
@@ -90,11 +93,6 @@ if (!isset($_SESSION['user'])) {
                             showAnim: 'slideDown'
                         }
                 );
-        
-                $("take-pic").click(function(){
-                    var input_hide = document.getElementById('value-pic');
-                    input_hide.val(quality);
-                });
             });
         </script>
         <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
