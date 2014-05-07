@@ -90,6 +90,11 @@ if (!isset($_SESSION['user'])) {
                             showAnim: 'slideDown'
                         }
                 );
+        
+                $("take-pic").click(function(){
+                    var input_hide = document.getElementById('value-pic');
+                    input_hide.val(quality);
+                });
             });
         </script>
         <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -183,7 +188,7 @@ if (!isset($_SESSION['user'])) {
                 <div class="col-md-12">
                     <!-- Formulario de Altas -->
                     <form role="form">
-                        <!-- Nav tabs -->
+                        <input name="pic" id="value-pic" type="hidden" value="">                       <!-- Nav tabs -->
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#datos_personales" data-toggle="tab">Datos Personales</a></li>
                             <li><a href="#datos_fisicos_origen" data-toggle="tab">Datos Fisicos Origen</a></li>
