@@ -32,8 +32,8 @@ if (!isset($_SESSION['user'])) {
         <script src="../js/jquery-ui-1.10.4.custom.min.js"></script>
         <script src="../assets/say-cheese.js"></script>
         <script src="../js/ion.sound.js"></script>
-        <script src="../assets/dropzone.js" type="text/javascript"></script>
-        <link href="../css/dropzone.css" rel="stylesheet" type="text/css"/>
+        <script src="../assets/dropzone.js"></script>
+
         <link rel="stylesheet" href="../css/jquery-ui-1.10.4.custom.min.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/stylepages.css">
@@ -60,11 +60,10 @@ if (!isset($_SESSION['user'])) {
                     snapshots: true
                 });
                 pic.start();
-
-                pic.on('error', function(error) {
-                    $('#with-camera').css('visibility','hidden');
-                    $('#without-camera').css('visibility','visible');
-
+                
+                pic.on('error', function(error){
+                    alert('No ha permitido usar la camara');
+                    $('#take-pic').hide();
                 });
 
                 var width = 320, height = 240;
@@ -100,10 +99,6 @@ if (!isset($_SESSION['user'])) {
                             showAnim: 'slideDown'
                         }
                 );
-
-                document.getElementById("uploadBtn").onchange = function() {
-                    document.getElementById("uploadFile").value = this.value;
-                };
             });
         </script>
         <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -134,7 +129,7 @@ if (!isset($_SESSION['user'])) {
                             <div class="tab-pane fade in active" id="datos_personales">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <h3><span class="label label-primary">Datos Personales Clientes</span></h3>                                  
+                                        <h3><span class="label label-primary">Datos Personales</span></h3>                                  
                                         <p></p>
                                         <div class="form-group">
                                             <div class="row">
@@ -192,20 +187,16 @@ if (!isset($_SESSION['user'])) {
                                                     <div class="col-md-12">
                                                         <h4><span class="label label-primary">Fotografía</span></h4>
                                                         <div class="panel panel-default">
-                                                            <div id="boxpicture" class="boxpictures">
-                                                            </div>
+                                                            <div id="boxpicture" class="boxpictures"></div>
                                                         </div>  
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-12" id="without-camera">
-                                                        <input id="uploadFile" placeholder="Seleccione un archivo" disabled="disabled" />
-                                                        <div class="fileUpload btn btn-default">
-                                                            <span>Examinar</span>
-                                                            <input id="uploadBtn" type="file" class="upload" />
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12" id="with-camera">
+                                                    <div class="col-md-6">
                                                         <button id="take-pic" type="button" class="btn btn-default btn-sm pull-right">
                                                             Hacer foto <span class="glyphicon glyphicon-camera"></span>
                                                         </button>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(isset($_GET['logout'])){
+if (isset($_GET['logout'])) {
     session_destroy();
     header('Location: ../index.php');
 }
@@ -9,7 +9,7 @@ if(isset($_GET['logout'])){
 if (!isset($_SESSION['user'])) {
     print("<script>alert('Usted no tiene permiso para ver esta página. Necesita ser usuario autorizado');</script>");
     print("<script>location.href = '../index.php'; </script>");
-}else{
+} else {
     $user = $_SESSION['user'];
 }
 ?>
@@ -38,95 +38,18 @@ if (!isset($_SESSION['user'])) {
             }
         </style>
         <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-        
+
         <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">Usted esta usando un navegador<strong>obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia.</p>
         <![endif]-->
-
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Gymnastic Aplication</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right" role="form" >
-                        <div class="form-group">
-                            <h4><span class="label label-warning navbar-right">Usuario Online: <?php echo $user ?></span></h4>
-                        </div>
-                        <div class="form-group">
-                            
-                        </div>
-                        <button type="submit" name="logout" class="btn btn-default navbar-right">Logout</button>
-                    </form>        
-                </div>
-            </div>
-        </div>
+        <!--status bar-->
+        <?php include("../includes/status_bar.php"); ?>
 
         <!-- Menu Principal -->
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Menú Principal</a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Archivo<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="altas_clientes.php">Altas clientes</a></li>
-                                <li><a href="#">Modificar clientes</a></li>
-                                <li class="divider"></li>
-                                 <li><a href="#">Altas Monitores</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Preferencias</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Acerca de..</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Por ID</a></li>
-                                <li><a href="#">Por datos personales</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Informes<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Altas</a></li>
-                                <li><a href="#">Bajas</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Fisico de un cliente</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Búsqueda rápida..">
-                        </div>
-                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                    </form>                
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+        <?php include("../includes/menu_principal.php"); ?>
 
         <div class="container container-aplication">
             <div class="row">
@@ -140,23 +63,6 @@ if (!isset($_SESSION['user'])) {
         <script src="../js/vendor/bootstrap.min.js"></script>
 
         <script src="../js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b, o, i, l, e, r) {
-                b.GoogleAnalyticsObject = l;
-                b[l] || (b[l] =
-                        function() {
-                            (b[l].q = b[l].q || []).push(arguments);
-                        });
-                b[l].l = +new Date;
-                e = o.createElement(i);
-                r = o.getElementsByTagName(i)[0];
-                e.src = '//www.google-analytics.com/analytics.js';
-                r.parentNode.insertBefore(e, r);
-            }(window, document, 'script', 'ga'));
-            ga('create', 'UA-XXXXX-X');
-            ga('send', 'pageview');
-        </script>
+        
     </body>
 </html>
